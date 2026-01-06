@@ -30,7 +30,7 @@ export default function App() {
         </main>
 
         {/* Feed (desktop only) */}
-        <div className="hidden lg:block">
+        <div className=" lg:block">
           <Feed />
         </div>
       </div>
