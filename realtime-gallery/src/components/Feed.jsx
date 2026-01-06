@@ -28,7 +28,7 @@ export default function Feed() {
   }, []);
 
   return (
-    <aside className="w-80 bg-white border-l h-screen overflow-y-auto">
+<aside className="w-full lg:w-80 bg-white border-l h-[60vh] lg:h-screen overflow-y-auto">
       {/* Header */}
       <div className="sticky top-0 bg-white z-10 p-4 border-b">
         <h3 className="font-semibold flex items-center gap-2">
