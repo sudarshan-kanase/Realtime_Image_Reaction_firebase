@@ -8,17 +8,14 @@ import {
 import { db } from "../api/firebase";
 
 export default function Feed() {
-  // Store all live feed items
   const [items, setItems] = useState([]);
 
-  // Listen to global feed in real-time
   useEffect(() => {
     const q = query(
       collection(db, "feed"),
       orderBy("createdAt", "desc")
     );
 
-    // Real-time Firestore listener
     const unsub = onSnapshot(q, (snap) => {
       const list = snap.docs.map((doc) => ({
         id: doc.id,
@@ -27,24 +24,25 @@ export default function Feed() {
       setItems(list);
     });
 
-    // Cleanup listener on unmount
     return () => unsub();
   }, []);
 
   return (
-    <div className="w-72 bg-white border-l p-4 h-screen overflow-y-auto">
-      {/* Feed title */}
-      <h3 className="font-semibold mb-4 flex items-center gap-2">
-        <span className="text-red-500">●</span>
-        Live Feed
-      </h3>
+    <aside className="w-80 bg-white border-l h-screen overflow-y-auto">
+      {/* Header */}
+      <div className="sticky top-0 bg-white z-10 p-4 border-b">
+        <h3 className="font-semibold flex items-center gap-2">
+          <span className="text-red-500 text-sm">●</span>
+          Live Feed
+        </h3>
+      </div>
 
       {/* Feed items */}
-      <div className="space-y-3 text-sm">
+      <div className="p-4 space-y-3 text-sm">
         {items.map((i) => (
           <div
             key={i.id}
-            className="bg-gray-50 border rounded-md px-3 py-2"
+            className="bg-gray-50 border rounded-lg px-3 py-2"
           >
             <p className="text-gray-700">
               {i.message}
@@ -52,13 +50,12 @@ export default function Feed() {
           </div>
         ))}
 
-        {/* Empty state */}
         {items.length === 0 && (
-          <p className="text-xs text-gray-400 italic">
+          <p className="text-xs text-gray-400 italic text-center">
             No activity yet
           </p>
         )}
       </div>
-    </div>
+    </aside>
   );
 }
