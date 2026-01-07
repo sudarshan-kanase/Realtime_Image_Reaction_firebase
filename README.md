@@ -7,12 +7,12 @@ Users can browse images from Unsplash, react with emojis, add comments, and see 
 ---
 
 ## 🔗 Live Demo
-👉 **Live App:** (add deployed link here)  
+👉 **Live App:**  
 Example: https://realtime-gallery.netlify.app
 
 ## 🔗 GitHub Repository
-👉 **Source Code:** (add repo link here)  
-Example: https://github.com/your-username/realtime-gallery
+👉 **Source Code:** 
+Example:(https://github.com/sudarshan-kanase/Realtime_Image_Reaction_firebase)
 
 ---
 
@@ -121,8 +121,7 @@ src/
 
 ### 1️⃣ Clone Repository
 ```bash
-git clone https://github.com/your-username/realtime-gallery.git
-cd realtime-gallery
+git clone https:(https://github.com/sudarshan-kanase/Realtime_Image_Reaction_firebase)
 
 2️⃣ Install Dependencies
 npm install
